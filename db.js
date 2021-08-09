@@ -1,25 +1,25 @@
 const { MongoClient, ObjectId } = require('mongodb');
-
-const dbName = 'crud_mongodb';
-const url = 'mongodb://localhost:27017';
+require('dotenv').config();
+const dbName = 'todoApp';
+const url = process.env.DATABASE_URL;
 const mongoOptions = { useNewUrlParser: true };
-
+const client = new MongoClient(url);
 const state = {
   db: null,
 };
 
 const db = {
-  connect: (cb) => {
+  connect: async (cb) => {
     if (state.db) {
       cb();
     } else {
-      MongoClient.connect(url, mongoOptions, (err, client) => {
-        if (err) cb(err);
-        else {
-          state.db = client.db(dbName);
-          cb();
-        }
-      });
+      try {
+        await client.connect();
+        state.db = client.db(dbName);
+        cb();
+      } catch (err) {
+        cb(err);
+      }
     }
   },
 

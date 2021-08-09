@@ -19,7 +19,7 @@ app.use('/todos', todosRouter);
 
 db.connect((err) => {
   if (err) {
-    console.log('unable to connect to database');
+    console.log(err, 'unable to connect to database');
     process.exit(1);
   } else {
     app.listen(port, () =>
