@@ -6,7 +6,7 @@ const todosRouter = require('./routes/todos');
 const port = 9988;
 
 const db = require('./db');
-const collection = 'todo';
+const collection = 'todos';
 
 // set engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));

@@ -1,1 +1,9 @@
-GET http://localhost:9988
+GET http://localhost:9988/todos
+
+###
+POST http://localhost:9988/todos
+Content-Type: application/json
+
+{
+    "todo": "go to sleep"
+}
