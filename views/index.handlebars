@@ -62,8 +62,22 @@
         checkbox.addEventListener('change', function () {
             const { id } = this.parentElement.dataset;
             if (this.checked) {
+                fetch('/todos', {
+                    method: 'PUT',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({ id, done: 'true' })
+                }).then(res => res.json()).then(res => console.log(res))
                 console.log(`Checkbox with id ${id} is checked..`);
             } else {
+                fetch('/todos', {
+                    method: 'PUT',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({ id, done: 'false' })
+                }).then(res => res.json()).then(res => console.log(res))
                 console.log(`Checkbox with id ${id} is not checked..`);
             }
         });
