@@ -53,3 +53,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    const checkboxes = document.querySelectorAll('.form-check-input[type=checkbox]')
+    console.log(checkboxes);
+    checkboxes.forEach(checkbox => {
+
+        checkbox.addEventListener('change', function () {
+            const { id } = this.parentElement.dataset;
+            if (this.checked) {
+                console.log(`Checkbox with id ${id} is checked..`);
+            } else {
+                console.log(`Checkbox with id ${id} is not checked..`);
+            }
+        });
+    })
+
+
+
+</script>
