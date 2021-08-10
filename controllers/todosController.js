@@ -1,10 +1,12 @@
 const db = require('../db');
+const { countCompleted } = require('../public/js/countCompleted');
 module.exports = {
   getAllTodos: async function (req, res) {
     try {
       const documents = await db.getDB().collection('todos').find({}).toArray();
+      const countObj = countCompleted(documents);
       console.log(documents);
-      res.status(200).json(documents);
+      res.status(200).render('index', { documents, countObj });
     } catch (err) {
       console.log(err, 'catch in get all method');
       res.status(500).json({
@@ -13,9 +15,9 @@ module.exports = {
     }
   },
   createTodo: async function (req, res) {
-    const { todo, priority } = req.body;
+    const { todo, priority, done } = req.body;
     try {
-      await db.getDB().collection('todos').insertOne({ todo, priority });
+      await db.getDB().collection('todos').insertOne({ todo, priority, done });
       const documents = await db.getDB().collection('todos').find({}).toArray();
       console.log(documents);
       res.status(201).json(documents);
