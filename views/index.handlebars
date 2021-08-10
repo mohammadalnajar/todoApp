@@ -1,1 +1,55 @@
-<h1>How are you</h1>
+<div class="cover">
+    <div class="container big-container">
+        <div class="row d-flex justify-content-center flex-column align-items-center">
+            <div class="col-md-6 my-tasks_head">
+                <h1>My tasks</h1>
+                <p>{{countObj.done}} of {{countObj.total}} tasks done</p>
+            </div>
+            <div class="col-md-12 row my-tasks">
+                <ul>
+                    {{#each documents}}
+                    <li>
+                        <div class="form-check d-flex justify-content-between" data-id={{this._id}}>
+                            <input class="form-check-input" type="checkbox" value="" id={{this._id}}>
+                            <label class="form-check-label" for={{this._id}}>
+                                {{this.todo}}
+                            </label>
+                            <div class="icons">
+                                <i class="far fa-edit icon"></i>
+                                <i class="far fa-trash-alt icon"></i>
+                            </div>
+                        </div>
+                    </li>
+                    {{/each}}
+
+                </ul>
+            </div>
+            <div class="col-md-12 d-flex justify-content-end">
+                <form class="row row-cols-lg-auto g-3 align-items-center">
+                    <div class="col-6">
+                        <label class="visually-hidden" for="inlineFormInputGroupUsername">Todo</label>
+                        <div class="input-group">
+                            <div class="input-group-text">&#128170;</div>
+                            <input type="text" class="form-control" id="inlineFormInputGroupUsername"
+                                placeholder="todo">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                        <select class="form-select" id="inlineFormSelectPref">
+                            <option value="1">High</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Low</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                <button type="button" class="btn btn-danger add-btn">+</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,10 +14,13 @@ app.set('view engine', 'handlebars');
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.static('public'));
 //  router todos
 app.use('/todos', todosRouter);
 
+app.get('/', (req, res) => {
+  res.render('index');
+});
 db.connect((err) => {
   if (err) {
     console.log(err, 'unable to connect to database');
