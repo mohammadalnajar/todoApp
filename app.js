@@ -2,7 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 
 const app = express();
-const todosRouter = require('./routes/todos');
+const todosRouter = require('./routes/todosRouter');
 const port = 9988;
 
 const db = require('./db');
@@ -15,6 +15,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//  router todos
 app.use('/todos', todosRouter);
 
 db.connect((err) => {

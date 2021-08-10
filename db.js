@@ -1,5 +1,5 @@
 const { MongoClient, ObjectId } = require('mongodb');
-require('dotenv').config();
+require('dotenv').config({ path: './config/.env' });
 const dbName = 'todoApp';
 const url = process.env.DATABASE_URL;
 const mongoOptions = { useNewUrlParser: true };
