@@ -18,6 +18,19 @@ body {
   width: 400px;
   margin: 20px 0px;
 }
-.my-tasks_head {
-  background-color: aqua;
+
+ul {
+  list-style: none;
+}
+.icon {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.add-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
 }

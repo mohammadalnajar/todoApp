@@ -7,12 +7,47 @@
             </div>
             <div class="col-md-12 row my-tasks">
                 <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
+                    <li>
+                        <div class="form-check d-flex justify-content-between">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Default checkbox
+                            </label>
+                            <div class="icons">
+                                <i class="far fa-edit icon "></i>
+                                <i class="far fa-trash-alt icon"></i>
+                            </div>
+                        </div>
+                    </li>
+
+
                 </ul>
+            </div>
+            <div class="col-md-12 d-flex justify-content-end">
+                <form class="row row-cols-lg-auto g-3 align-items-center">
+                    <div class="col-6">
+                        <label class="visually-hidden" for="inlineFormInputGroupUsername">Todo</label>
+                        <div class="input-group">
+                            <div class="input-group-text">&#128170;</div>
+                            <input type="text" class="form-control" id="inlineFormInputGroupUsername"
+                                placeholder="todo">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                        <select class="form-select" id="inlineFormSelectPref">
+                            <option value="1">High</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Low</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                <button type="button" class="btn btn-danger add-btn">+</button>
             </div>
         </div>
     </div>
