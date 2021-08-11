@@ -1,19 +1,15 @@
 const checkboxes = document.querySelectorAll(
   '.form-check-input[type=checkbox]'
 );
-console.log(checkboxes);
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener('change', function () {
     const { id } = this.parentElement.dataset;
     if (this.checked) {
       checkboxUpdate(id, true);
       updateStyle(this, true);
-
-      console.log(`Checkbox with id ${id} is checked..`);
     } else {
       checkboxUpdate(id, false);
       updateStyle(this, false);
-      console.log(`Checkbox with id ${id} is not checked..`);
     }
   });
 });
