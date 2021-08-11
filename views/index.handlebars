@@ -10,7 +10,8 @@
                     {{#each documents}}
                     <li>
                         <div class="form-check d-flex justify-content-between" data-id={{this._id}}>
-                            <input class="form-check-input" type="checkbox" value="" id={{this._id}}>
+                            <input class="form-check-input" type="checkbox" value="" id={{this._id}} {{#if this.done}}
+                                checked {{/if}}>
                             <label class="form-check-label" for={{this._id}}>
                                 {{this.todo}}
                             </label>
@@ -20,6 +21,7 @@
                             </div>
                         </div>
                     </li>
+                    <li>{{this.done}}</li>
                     {{/each}}
 
                 </ul>
@@ -54,35 +56,4 @@
     </div>
 </div>
 
-<script>
-    const checkboxes = document.querySelectorAll('.form-check-input[type=checkbox]')
-    console.log(checkboxes);
-    checkboxes.forEach(checkbox => {
-
-        checkbox.addEventListener('change', function () {
-            const { id } = this.parentElement.dataset;
-            if (this.checked) {
-                fetch('/todos', {
-                    method: 'PUT',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify({ id, done: 'true' })
-                }).then(res => res.json()).then(res => console.log(res))
-                console.log(`Checkbox with id ${id} is checked..`);
-            } else {
-                fetch('/todos', {
-                    method: 'PUT',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify({ id, done: 'false' })
-                }).then(res => res.json()).then(res => console.log(res))
-                console.log(`Checkbox with id ${id} is not checked..`);
-            }
-        });
-    })
-
-
-
-</script>
+<script src="/js/checkboxes.js"></script>
