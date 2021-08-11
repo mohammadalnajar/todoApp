@@ -9,10 +9,12 @@
                 <ul>
                     {{#each documents}}
                     <li>
-                        <div class="form-check d-flex justify-content-between" data-id={{this._id}}>
-                            <input class="form-check-input" type="checkbox" value="" id={{this._id}} {{#if this.done}}
+                        <div class="form-check {{#if this.done}}
+                                checked {{/if}} d-flex justify-content-between" data-id={{this._id}}>
+                            <input class="form-check-input  " type="checkbox" value="" id={{this._id}} {{#if this.done}}
                                 checked {{/if}}>
-                            <label class="form-check-label" for={{this._id}}>
+                            <label class="form-check-label {{#if this.done}}
+                                checked {{/if}}" for={{this._id}}>
                                 {{this.todo}}
                             </label>
                             <div class="icons">
@@ -21,7 +23,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>{{this.done}}</li>
+
                     {{/each}}
 
                 </ul>
