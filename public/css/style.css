@@ -41,3 +41,7 @@ ul {
 .form-check.checked {
   opacity: 0.4;
 }
+.form-control {
+  width: auto;
+  position: relative;
+}
