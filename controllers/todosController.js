@@ -15,9 +15,12 @@ module.exports = {
     }
   },
   createTodo: async function (req, res) {
-    const { todo, priority, done } = req.body;
+    const { todo, priority } = req.body;
     try {
-      await db.getDB().collection('todos').insertOne({ todo, priority, done });
+      await db
+        .getDB()
+        .collection('todos')
+        .insertOne({ todo, priority, done: false });
       const documents = await db.getDB().collection('todos').find({}).toArray();
       console.log(documents);
       res.status(201).json(documents);
