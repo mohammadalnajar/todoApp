@@ -28,30 +28,29 @@
                 </ul>
             </div>
             <div class="col-md-12 d-flex justify-content-end">
-                <form class="row row-cols-lg-auto g-3 align-items-center">
+                <form class="row row-cols-lg-auto g-3 align-items-center form-add">
                     <div class="col-6">
                         <label class="visually-hidden" for="inlineFormInputGroupUsername">Todo</label>
                         <div class="input-group">
                             <div class="input-group-text">&#128170;</div>
-                            <input type="text" class="form-control" id="inlineFormInputGroupUsername"
-                                placeholder="todo">
+                            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="todo"
+                                required>
                         </div>
                     </div>
 
-                    <div class="col-6">
-                        <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                    <div class="col-4">
                         <select class="form-select" id="inlineFormSelectPref">
-                            <option value="1">High</option>
-                            <option value="2">Medium</option>
-                            <option value="3">Low</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
                         </select>
                     </div>
 
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="col-2">
+                        <button type="submit" class="btn">+</button>
                     </div>
                 </form>
-                <button type="button" class="btn btn-danger add-btn">+</button>
+                {{!-- <button type="button" class="btn btn-danger add-btn">+</button> --}}
             </div>
         </div>
     </div>
@@ -60,3 +59,4 @@
 <script src="/js/checkboxes.js"></script>
 <script src="/js/editTodo.js"></script>
 <script src="/js/deleteTodo.js"></script>
+<script src="/js/addTodo.js"></script>
