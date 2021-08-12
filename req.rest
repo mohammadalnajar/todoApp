@@ -7,7 +7,7 @@ Content-Type: application/json
 {
     "todo": "Clean your car",
     "priority":"high",
-    "done":true
+    "done":false
 }
 
 ### 
