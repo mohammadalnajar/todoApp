@@ -15,9 +15,9 @@
                             <input class="form-check-input  " type="checkbox" value="" id={{this._id}} {{#if this.done}}
                                 checked {{/if}}>
                             <label class="form-check-label {{#if this.done}}
-                                checked {{/if}}" for={{this._id}}>{{this.todo}}</label>
+                                checked {{/if}}" data-priority={{this.priority}} for={{this._id}}>{{this.todo}}</label>
                             <div class="icons">
-                                <i class="fas fa-circle" style="color: {{#if this.priority }}red{{/if}};"></i>
+                                <i class="fas fa-circle icon" type="priority"></i>
                                 <i class="far fa-edit icon" type="edit"></i>
                                 <i class="far fa-trash-alt icon" type="del"></i>
                             </div>
@@ -51,7 +51,6 @@
                         <button type="submit" class="btn"><i class="fas fa-plus"></i></button>
                     </div>
                 </form>
-                {{!-- <button type="button" class="btn btn-danger add-btn">+</button> --}}
             </div>
         </div>
     </div>
@@ -61,3 +60,4 @@
 <script src="/js/editTodo.js"></script>
 <script src="/js/deleteTodo.js"></script>
 <script src="/js/addTodo.js"></script>
+<script src="/js/main.js"></script>
