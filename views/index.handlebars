@@ -1,7 +1,7 @@
 <div class="cover">
     <div class="container big-container">
-        <div class="row d-flex justify-content-center flex-column align-items-center">
-            <div class="col-md-6 my-tasks_head">
+        <div class="row d-flex justify-content-between flex-column align-items-center h-100">
+            <div class="col-md-6 d-flex flex-column align-items-center my-tasks_head">
                 <h1>My tasks</h1>
                 <p>{{countObj.done}} of {{countObj.total}} tasks done</p>
             </div>
@@ -9,7 +9,7 @@
                 <ul>
                     {{#each documents}}
                     <li>
-                        <div class="form-check {{#if this.done}}
+                        <div class="form-check my-3 {{#if this.done}}
                                 checked {{/if}} d-flex justify-content-between align-items-center"
                             data-id={{this._id}}>
                             <input class="form-check-input  " type="checkbox" value="" id={{this._id}} {{#if this.done}}
@@ -17,6 +17,7 @@
                             <label class="form-check-label {{#if this.done}}
                                 checked {{/if}}" for={{this._id}}>{{this.todo}}</label>
                             <div class="icons">
+                                <i class="fas fa-circle" style="color: {{#if this.priority }}red{{/if}};"></i>
                                 <i class="far fa-edit icon" type="edit"></i>
                                 <i class="far fa-trash-alt icon" type="del"></i>
                             </div>
@@ -47,7 +48,7 @@
                     </div>
 
                     <div class="col-2">
-                        <button type="submit" class="btn">+</button>
+                        <button type="submit" class="btn"><i class="fas fa-plus"></i></button>
                     </div>
                 </form>
                 {{!-- <button type="button" class="btn btn-danger add-btn">+</button> --}}
