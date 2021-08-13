@@ -1,7 +1,8 @@
 const { MongoClient, ObjectId } = require('mongodb');
 require('dotenv').config({ path: './config/.env' });
 const dbName = 'todoApp';
-const url = process.env.DATABASE_URL;
+const keys = require('./config/keys');
+const url = keys.DATABASE_URL;
 const mongoOptions = { useNewUrlParser: true };
 const client = new MongoClient(url);
 const state = {
