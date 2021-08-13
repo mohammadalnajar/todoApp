@@ -83,3 +83,9 @@ ul {
   border-color: #6d1080;
   color: #6d1080;
 }
+#logo {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 120px;
+}
