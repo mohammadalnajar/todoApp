@@ -1,1 +1,64 @@
-<h1>How are you</h1>
+<div class="cover">
+    <div class="container big-container">
+        <div class="row d-flex justify-content-between flex-column align-items-center h-100">
+            <div class="col-md-6 d-flex flex-column align-items-center my-tasks_head">
+                <h1>My tasks</h1>
+                <p>{{countObj.done}} of {{countObj.total}} tasks done</p>
+            </div>
+            <div class="col-md-12 row my-tasks">
+                {{#if empty}}<h1 class="text-center">No todos found</h1>{{/if}}
+                <ul>
+                    {{#each documents}}
+                    <li>
+                        <div class="form-check my-3 {{#if this.done}}
+                                checked {{/if}} d-flex justify-content-between align-items-center"
+                            data-id={{this._id}}>
+                            <input class="form-check-input  " type="checkbox" value="" id={{this._id}} {{#if this.done}}
+                                checked {{/if}}>
+                            <label class="form-check-label {{#if this.done}}
+                                checked {{/if}}" data-priority={{this.priority}} for={{this._id}}>{{this.todo}}</label>
+                            <div class="icons">
+                                <i class="fas fa-circle icon" type="priority"></i>
+                                <i class="far fa-edit icon" type="edit"></i>
+                                <i class="far fa-trash-alt icon" type="del"></i>
+                            </div>
+                        </div>
+                    </li>
+
+                    {{/each}}
+
+                </ul>
+            </div>
+            <div class="col-md-12 d-flex justify-content-end">
+                <form class="row row-cols-lg-auto g-3 align-items-center form-add">
+                    <div class="col-6">
+                        <label class="visually-hidden" for="inlineFormInputGroupUsername">Todo</label>
+                        <div class="input-group">
+                            <div class="input-group-text">&#128170;</div>
+                            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="todo"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <select class="form-select" id="inlineFormSelectPref">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+
+                    <div class="col-2">
+                        <button type="submit" class="btn"><i class="fas fa-plus"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/checkboxes.js"></script>
+<script src="/js/editTodo.js"></script>
+<script src="/js/deleteTodo.js"></script>
+<script src="/js/addTodo.js"></script>
+<script src="/js/main.js"></script>

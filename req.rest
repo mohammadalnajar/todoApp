@@ -5,5 +5,24 @@ POST http://localhost:9988/todos
 Content-Type: application/json
 
 {
-    "todo": "go to sleep"
+    "todo": "Clean your car",
+    "priority":"high",
+    "done":false
+}
+
+### 
+PUT http://localhost:9988/todos
+Content-Type: application/json
+
+{
+    "id":"611238deb6e1d0dc831c2b8d",
+    "priority":"middle"
+}
+
+###
+DELETE  http://localhost:9988/todos
+Content-Type: application/json
+
+{
+    "id":"6112f5efdef124a346414bfa"
 }
