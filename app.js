@@ -21,7 +21,7 @@ hbs.handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
   return arg1 == arg2 ? options.fn(this) : options.inverse(this);
 });
 app.get('/', (req, res) => {
-  res.render('index');
+  res.redirect('/todos');
 });
 db.connect((err) => {
   if (err) {
