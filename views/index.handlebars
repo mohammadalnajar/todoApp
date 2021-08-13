@@ -6,6 +6,7 @@
                 <p>{{countObj.done}} of {{countObj.total}} tasks done</p>
             </div>
             <div class="col-md-12 row my-tasks">
+                {{#if empty}}<h1 class="text-center">No todos found</h1>{{/if}}
                 <ul>
                     {{#each documents}}
                     <li>

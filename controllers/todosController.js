@@ -3,10 +3,14 @@ const { countCompleted } = require('../public/js/countCompleted');
 module.exports = {
   getAllTodos: async function (req, res) {
     try {
+      let empty = false;
       const documents = await db.getDB().collection('todos').find({}).toArray();
       const countObj = countCompleted(documents);
+      if (documents.length < 1) {
+        empty = true;
+      }
       console.log(documents);
-      res.status(200).render('index', { documents, countObj });
+      res.status(200).render('index', { documents, countObj, empty });
     } catch (err) {
       console.log(err, 'catch in get all method');
       res.status(500).json({
