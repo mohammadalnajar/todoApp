@@ -65,6 +65,12 @@ ul {
 }
 .form-check.checked {
   opacity: 0.4;
+  background: linear-gradient(
+    to right,
+    white 0%,
+    rgba(0, 0, 0, 0.445) 50%,
+    white 100%
+  );
 }
 .form-control {
   width: auto;
