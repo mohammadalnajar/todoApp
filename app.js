@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const app = express();
 const todosRouter = require('./routes/todosRouter');
-const port = 9988;
+const port = process.env.PORT || 9988;
 
 const db = require('./db');
 const collection = 'todos';
